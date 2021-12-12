@@ -34,6 +34,29 @@ behaviors:
       play_against_latest_model_ratio: 0.5
       initial_elo: 1200.0
 
+environment_parameters:
+  mass:
+    sampler_type: uniform
+    sampler_parameters:
+        min_value: 0.5
+        max_value: 10
+
+  length:
+    sampler_type: multirangeuniform
+    sampler_parameters:
+        intervals: [[7, 10], [15, 20]]
+
+  scale:
+    sampler_type: gaussian
+    sampler_parameters:
+        mean: 2
+        st_dev: .3
+  ball_hold_bonus: 0.0
+  is_capture_the_flag: 0
+  eliminiation_hit_reward: 0.2
+  stun_time: 10.0
+
+
 # Enable when training from a build or in the cloud.
 # env_settings:
 #   num_envs: 3
