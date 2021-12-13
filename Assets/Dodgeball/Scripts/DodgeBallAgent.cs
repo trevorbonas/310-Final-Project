@@ -57,7 +57,7 @@ public class DodgeBallAgent : Agent
     public Animator VictoryDanceAnimation;
 
     [HideInInspector]
-    public int NumberOfTimesPlayerCanBeHit = 5;
+    public int NumberOfTimesPlayerCanBeHit = 2;
     [HideInInspector]
     public int HitPointsRemaining; //how many more times can we be hit
 
@@ -78,7 +78,7 @@ public class DodgeBallAgent : Agent
     public float m_StunTime;
     private float m_OpponentHasFlagPenalty;
     private float m_TeamHasFlagBonus;
-    private float m_BallHoldBonus = 0.0f;
+    private float m_BallHoldBonus = -0.01f;
     private float m_LocationNormalizationFactor = 80.0f; // About the size of a reasonable stage
     private EnvironmentParameters m_EnvParameters;
 
@@ -239,9 +239,16 @@ public class DodgeBallAgent : Agent
     }
 
     //Collect observations, to be used by the agent in ML-Agents.
+  
+    float stillAliveReward = 0.2f;
     public override void CollectObservations(VectorSensor sensor)
     {
+
         AddReward(m_BallHoldBonus * (float)currentNumberOfBalls);
+        if(HitPointsRemaining > 0){
+            AddReward(stillAliveReward);
+        }
+
         if (UseVectorObs)
         {
             sensor.AddObservation(ThrowController.coolDownWait); //Held DBs Normalized
@@ -386,8 +393,10 @@ public class DodgeBallAgent : Agent
         }
     }
 
+    float throwBallReward = 0.2f;
     public void ThrowTheBall()
     {
+        AddReward(throwBallReward);
         if (currentNumberOfBalls > 0 && !ThrowController.coolDownWait)
         {
             var db = ActiveBallsQueue.Peek();
@@ -542,8 +551,17 @@ public class DodgeBallAgent : Agent
         }
     }
 
+    float lavaPenalty = -10f;
     private void OnCollisionEnter(Collision col)
     {
+        //print(col.gameObject.name);
+        if(col.gameObject.name == "LavaFloor"){
+            //make agent stop
+            print("fellinlava");
+            SetReward(lavaPenalty);
+            m_GameController.fellInLava(this);
+        }
+
         // Ignore all collisions when stunned
         if (Stunned)
         {
@@ -604,8 +622,10 @@ public class DodgeBallAgent : Agent
         }
     }
 
+    float pickBallReward = 0.5f;
     void PickUpBall(DodgeBall db)
     {
+        AddReward(pickBallReward);
         if (m_GameController.ShouldPlayEffects)
         {
             m_BallImpactAudioSource.PlayOneShot(m_GameController.BallPickupClip, .1f);
