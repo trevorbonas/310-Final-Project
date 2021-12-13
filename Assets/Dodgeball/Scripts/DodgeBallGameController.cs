@@ -81,8 +81,8 @@ public class DodgeBallGameController : MonoBehaviour
     public GameObject PurpleTeamWonUI;
     public TMP_Text CountDownText;
 
-    private int m_NumberOfBluePlayersRemaining = 4; //current number of blue players remaining in elimination mode
-    private int m_NumberOfPurplePlayersRemaining = 4; //current number of purple players remaining in elimination mode
+    private int m_NumberOfBluePlayersRemaining = 2; //current number of blue players remaining in elimination mode
+    private int m_NumberOfPurplePlayersRemaining = 2; //current number of purple players remaining in elimination mode
     private SimpleMultiAgentGroup m_Team0AgentGroup;
     private SimpleMultiAgentGroup m_Team1AgentGroup;
 
@@ -493,7 +493,7 @@ public class DodgeBallGameController : MonoBehaviour
                     }
                     else
                     {
-                        hit.gameObject.SetActive(false);
+                        hit.gameObject.SetActive(false); //disable the agent that was hit
                     }
                     hit.DropAllBalls();
                 }
@@ -503,6 +503,59 @@ public class DodgeBallGameController : MonoBehaviour
         {
             hit.HitPointsRemaining--;
             thrower.AddReward(hitBonus);
+        }
+    }
+
+    public void fellInLava(DodgeBallAgent fallen)
+    {
+        //SET AGENT/TEAM REWARDS HERE
+        int fallenTeamID = fallen.teamID;
+        int throwTeamID = fallenTeamID == 1 ? 0 : 1;
+        var HitAgentGroup = fallenTeamID == 1 ? m_Team1AgentGroup : m_Team0AgentGroup;
+        var ThrowAgentGroup = fallenTeamID == 1 ? m_Team0AgentGroup : m_Team1AgentGroup;
+        float hitBonus = GameMode == GameModeType.Elimination ? EliminationHitBonus : CTFHitBonus;
+
+
+        if (fallen.HitPointsRemaining == 1) //FINAL HIT
+        {
+            if (GameMode == GameModeType.Elimination)
+            {
+                m_NumberOfBluePlayersRemaining -= fallenTeamID == 0 ? 1 : 0;
+                m_NumberOfPurplePlayersRemaining -= fallenTeamID == 1 ? 1 : 0;
+                // The current agent was just killed and is the final agent
+                if (m_NumberOfBluePlayersRemaining == 0 || m_NumberOfPurplePlayersRemaining == 0 || fallen.gameObject == PlayerGameObject)
+                {
+                    ThrowAgentGroup.AddGroupReward(2.0f - m_TimeBonus * (m_ResetTimer / MaxEnvironmentSteps));
+                    HitAgentGroup.AddGroupReward(-1.0f);
+                    ThrowAgentGroup.EndGroupEpisode();
+                    HitAgentGroup.EndGroupEpisode();
+                    fallen.DropAllBalls();
+                    if (ShouldPlayEffects)
+                    {
+                        // Don't poof the last agent
+                        StartCoroutine(TumbleThenPoof(fallen, false));
+                    }
+                    EndGame(throwTeamID);
+                }
+                // The current agent was just killed but there are other agents
+                else
+                {
+                    // Additional effects for game mode
+                    if (ShouldPlayEffects)
+                    {
+                        StartCoroutine(TumbleThenPoof(fallen));
+                    }
+                    else
+                    {
+                        fallen.gameObject.SetActive(false); //disable the agent that was hit
+                    }
+                    fallen.DropAllBalls();
+                }
+            }
+        }
+        else
+        {
+            fallen.HitPointsRemaining--;
         }
     }
 
