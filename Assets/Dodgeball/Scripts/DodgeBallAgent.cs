@@ -86,7 +86,6 @@ public class DodgeBallAgent : Agent
     public float m_StunTime;
     private float m_OpponentHasFlagPenalty;
     private float m_TeamHasFlagBonus;
-   
     private float m_LocationNormalizationFactor = 80.0f; // About the size of a reasonable stage
     private EnvironmentParameters m_EnvParameters;
 
@@ -247,8 +246,6 @@ public class DodgeBallAgent : Agent
     }
 
     //Collect observations, to be used by the agent in ML-Agents.
-  
-   
     public override void CollectObservations(VectorSensor sensor)
     {
 
