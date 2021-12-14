@@ -42650,15 +42650,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 783685695789032755, guid: 5cc1d375350254c0585ef6e96a4ed1e5,
         type: 3}
-<<<<<<< Updated upstream
-=======
       propertyPath: m_Model
       value: 
       objectReference: {fileID: 5022602860645237092, guid: e577a4515d0ed4325957124f9bb3b6d9,
         type: 3}
     - target: {fileID: 783685695789032755, guid: 5cc1d375350254c0585ef6e96a4ed1e5,
         type: 3}
->>>>>>> Stashed changes
       propertyPath: m_InferenceDevice
       value: 0
       objectReference: {fileID: 0}
@@ -42694,15 +42691,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1059243915129471044, guid: 5cc1d375350254c0585ef6e96a4ed1e5,
         type: 3}
-<<<<<<< Updated upstream
-=======
       propertyPath: m_Model
       value: 
       objectReference: {fileID: 5022602860645237092, guid: e577a4515d0ed4325957124f9bb3b6d9,
         type: 3}
     - target: {fileID: 1059243915129471044, guid: 5cc1d375350254c0585ef6e96a4ed1e5,
         type: 3}
->>>>>>> Stashed changes
       propertyPath: m_InferenceDevice
       value: 0
       objectReference: {fileID: 0}
@@ -42808,15 +42802,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2725496699599259471, guid: 5cc1d375350254c0585ef6e96a4ed1e5,
         type: 3}
-<<<<<<< Updated upstream
-=======
       propertyPath: m_Model
       value: 
       objectReference: {fileID: 5022602860645237092, guid: e577a4515d0ed4325957124f9bb3b6d9,
         type: 3}
     - target: {fileID: 2725496699599259471, guid: 5cc1d375350254c0585ef6e96a4ed1e5,
         type: 3}
->>>>>>> Stashed changes
       propertyPath: m_InferenceDevice
       value: 0
       objectReference: {fileID: 0}
@@ -42897,15 +42888,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4003889806185194270, guid: 5cc1d375350254c0585ef6e96a4ed1e5,
         type: 3}
-<<<<<<< Updated upstream
-=======
       propertyPath: m_Model
       value: 
       objectReference: {fileID: 5022602860645237092, guid: e577a4515d0ed4325957124f9bb3b6d9,
         type: 3}
     - target: {fileID: 4003889806185194270, guid: 5cc1d375350254c0585ef6e96a4ed1e5,
         type: 3}
->>>>>>> Stashed changes
       propertyPath: m_InferenceDevice
       value: 0
       objectReference: {fileID: 0}
@@ -42921,15 +42909,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4135050539489841420, guid: 5cc1d375350254c0585ef6e96a4ed1e5,
         type: 3}
-<<<<<<< Updated upstream
-=======
       propertyPath: m_Model
       value: 
       objectReference: {fileID: 5022602860645237092, guid: e577a4515d0ed4325957124f9bb3b6d9,
         type: 3}
     - target: {fileID: 4135050539489841420, guid: 5cc1d375350254c0585ef6e96a4ed1e5,
         type: 3}
->>>>>>> Stashed changes
       propertyPath: m_InferenceDevice
       value: 0
       objectReference: {fileID: 0}
