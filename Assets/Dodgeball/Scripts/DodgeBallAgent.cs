@@ -11,7 +11,15 @@ using Random = UnityEngine.Random;
 
 public class DodgeBallAgent : Agent
 {
+    //Reward variables we set to apply different rewards/penalties
+    float stillAliveReward = 1f;
+    float throwBallReward = 2f;
+    float lavaPenalty = -5f;
+    float pickBallReward = 1f;
 
+    private float m_BallHoldBonus = -0.5f;
+
+    //End of our variables
     [Header("TEAM")]
 
     public int teamID;
@@ -78,7 +86,7 @@ public class DodgeBallAgent : Agent
     public float m_StunTime;
     private float m_OpponentHasFlagPenalty;
     private float m_TeamHasFlagBonus;
-    private float m_BallHoldBonus = -0.01f;
+   
     private float m_LocationNormalizationFactor = 80.0f; // About the size of a reasonable stage
     private EnvironmentParameters m_EnvParameters;
 
@@ -240,7 +248,7 @@ public class DodgeBallAgent : Agent
 
     //Collect observations, to be used by the agent in ML-Agents.
   
-    float stillAliveReward = 0.2f;
+   
     public override void CollectObservations(VectorSensor sensor)
     {
 
@@ -393,7 +401,7 @@ public class DodgeBallAgent : Agent
         }
     }
 
-    float throwBallReward = 0.2f;
+    
     public void ThrowTheBall()
     {
         AddReward(throwBallReward);
@@ -551,7 +559,7 @@ public class DodgeBallAgent : Agent
         }
     }
 
-    float lavaPenalty = -10f;
+    
     private void OnCollisionEnter(Collision col)
     {
         //print(col.gameObject.name);
@@ -622,7 +630,7 @@ public class DodgeBallAgent : Agent
         }
     }
 
-    float pickBallReward = 0.5f;
+    
     void PickUpBall(DodgeBall db)
     {
         AddReward(pickBallReward);
