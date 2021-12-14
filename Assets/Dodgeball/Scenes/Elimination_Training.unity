@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18387091, g: 0.22901747, b: 0.30311248, a: 1}
+  m_IndirectSpecularColor: {r: 0.18387073, g: 0.22901714, b: 0.3031122, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -42650,6 +42650,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 783685695789032755, guid: 5cc1d375350254c0585ef6e96a4ed1e5,
         type: 3}
+<<<<<<< Updated upstream
+=======
+      propertyPath: m_Model
+      value: 
+      objectReference: {fileID: 5022602860645237092, guid: e577a4515d0ed4325957124f9bb3b6d9,
+        type: 3}
+    - target: {fileID: 783685695789032755, guid: 5cc1d375350254c0585ef6e96a4ed1e5,
+        type: 3}
+>>>>>>> Stashed changes
       propertyPath: m_InferenceDevice
       value: 0
       objectReference: {fileID: 0}
@@ -42685,6 +42694,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1059243915129471044, guid: 5cc1d375350254c0585ef6e96a4ed1e5,
         type: 3}
+<<<<<<< Updated upstream
+=======
+      propertyPath: m_Model
+      value: 
+      objectReference: {fileID: 5022602860645237092, guid: e577a4515d0ed4325957124f9bb3b6d9,
+        type: 3}
+    - target: {fileID: 1059243915129471044, guid: 5cc1d375350254c0585ef6e96a4ed1e5,
+        type: 3}
+>>>>>>> Stashed changes
       propertyPath: m_InferenceDevice
       value: 0
       objectReference: {fileID: 0}
@@ -42790,6 +42808,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2725496699599259471, guid: 5cc1d375350254c0585ef6e96a4ed1e5,
         type: 3}
+<<<<<<< Updated upstream
+=======
+      propertyPath: m_Model
+      value: 
+      objectReference: {fileID: 5022602860645237092, guid: e577a4515d0ed4325957124f9bb3b6d9,
+        type: 3}
+    - target: {fileID: 2725496699599259471, guid: 5cc1d375350254c0585ef6e96a4ed1e5,
+        type: 3}
+>>>>>>> Stashed changes
       propertyPath: m_InferenceDevice
       value: 0
       objectReference: {fileID: 0}
@@ -42870,6 +42897,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4003889806185194270, guid: 5cc1d375350254c0585ef6e96a4ed1e5,
         type: 3}
+<<<<<<< Updated upstream
+=======
+      propertyPath: m_Model
+      value: 
+      objectReference: {fileID: 5022602860645237092, guid: e577a4515d0ed4325957124f9bb3b6d9,
+        type: 3}
+    - target: {fileID: 4003889806185194270, guid: 5cc1d375350254c0585ef6e96a4ed1e5,
+        type: 3}
+>>>>>>> Stashed changes
       propertyPath: m_InferenceDevice
       value: 0
       objectReference: {fileID: 0}
@@ -42885,6 +42921,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4135050539489841420, guid: 5cc1d375350254c0585ef6e96a4ed1e5,
         type: 3}
+<<<<<<< Updated upstream
+=======
+      propertyPath: m_Model
+      value: 
+      objectReference: {fileID: 5022602860645237092, guid: e577a4515d0ed4325957124f9bb3b6d9,
+        type: 3}
+    - target: {fileID: 4135050539489841420, guid: 5cc1d375350254c0585ef6e96a4ed1e5,
+        type: 3}
+>>>>>>> Stashed changes
       propertyPath: m_InferenceDevice
       value: 0
       objectReference: {fileID: 0}
@@ -43030,6 +43075,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5361921795346502899, guid: 5cc1d375350254c0585ef6e96a4ed1e5,
         type: 3}
+      propertyPath: m_Model
+      value: 
+      objectReference: {fileID: 5022602860645237092, guid: e577a4515d0ed4325957124f9bb3b6d9,
+        type: 3}
+    - target: {fileID: 5361921795346502899, guid: 5cc1d375350254c0585ef6e96a4ed1e5,
+        type: 3}
       propertyPath: m_InferenceDevice
       value: 0
       objectReference: {fileID: 0}
@@ -43045,9 +43096,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5895108533257108356, guid: 5cc1d375350254c0585ef6e96a4ed1e5,
         type: 3}
+      propertyPath: m_Model
+      value: 
+      objectReference: {fileID: 5022602860645237092, guid: e577a4515d0ed4325957124f9bb3b6d9,
+        type: 3}
+    - target: {fileID: 5895108533257108356, guid: 5cc1d375350254c0585ef6e96a4ed1e5,
+        type: 3}
       propertyPath: m_InferenceDevice
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5895108533257108476, guid: 5cc1d375350254c0585ef6e96a4ed1e5,
+        type: 3}
+      propertyPath: MaxStep
+      value: 20000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5928082046627119036, guid: 5cc1d375350254c0585ef6e96a4ed1e5,
+        type: 3}
+      propertyPath: m_Model
+      value: 
+      objectReference: {fileID: 5022602860645237092, guid: e577a4515d0ed4325957124f9bb3b6d9,
+        type: 3}
     - target: {fileID: 5928082046627119036, guid: 5cc1d375350254c0585ef6e96a4ed1e5,
         type: 3}
       propertyPath: m_InferenceDevice

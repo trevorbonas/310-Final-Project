@@ -21,8 +21,13 @@ behaviors:
         gamma: 0.999
         strength: 1.0
     keep_checkpoints: 40
+<<<<<<< Updated upstream
     checkpoint_interval: 2000000
     max_steps: 500000000
+=======
+    checkpoint_interval: 20000
+    max_steps: 50000000
+>>>>>>> Stashed changes
     time_horizon: 1000
     summary_freq: 50000
     threaded: false
